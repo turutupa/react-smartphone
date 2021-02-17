@@ -7,7 +7,7 @@ import {
   HomeButtonProps,
   CameraProps,
   VolumeProps,
-  LockButtonProps,
+  ContentProps,
 } from './interfaces';
 
 import {
@@ -66,6 +66,7 @@ const Screen = styled.div`
   left: 30px;
   top: 50px;
   border-radius: 25px;
+  overflow: hidden;
 `;
 
 const HomeButton = styled.div`
@@ -136,6 +137,11 @@ const LockButton = styled.div`
 `;
 
 const Content = styled.div`
+  height: ${(props: ContentProps) =>
+    props.height ? `calc(${props.height} - 110px)` : phoneHeight + 'px'};
+  width: ${(props: ContentProps) =>
+    props.width ? `calc(${props.width} - 60px)` : phoneWidth + 'px'};
+  border-radius: 25px;
   z-index: -1;
 `;
 
@@ -202,7 +208,9 @@ export default function Phone(props: Props) {
 
       <Screen color={screenColor} height={height} width={width}>
         <Lockscreen status={lockscreen} />
-        <Content>{component}</Content>
+        <Content height={height} width={width}>
+          {component}
+        </Content>
       </Screen>
       <HomeButton color={detailsColor} shadowColor={detailsColor} />
     </Container>

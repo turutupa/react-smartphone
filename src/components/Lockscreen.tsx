@@ -33,9 +33,15 @@ const Clock = styled.div`
 
 function getTime(): string {
   const d = new Date();
-  const hours = d.getHours();
-  const minutes = d.getMinutes();
+  let hours = String(d.getHours());
+  let minutes = String(d.getMinutes());
   let seconds = String(d.getSeconds());
+  if (hours.length < 2) {
+    hours = '0' + hours;
+  }
+  if (minutes.length < 2) {
+    minutes = '0' + minutes;
+  }
   if (seconds.length < 2) {
     seconds = '0' + seconds;
   }

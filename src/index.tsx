@@ -6,7 +6,13 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     <Smartphone height='880px' width='550px'>
-      <div style={{ textAlign: 'center', paddingTop: '30px', color: 'white' }}>
+      <div
+        style={{
+          textAlign: 'center',
+          color: 'white',
+          backgroundColor: 'salmon',
+        }}
+      >
         <h1>I love this app!</h1>
         <p>Looks freakin amazing!</p>
       </div>

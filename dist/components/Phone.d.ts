@@ -1,6 +1,6 @@
 interface Props {
-    height?: number;
-    width?: number;
+    height?: string | number;
+    width?: string | number;
     caseColor?: string;
     detailsColor?: string;
     cameraColor?: string;
