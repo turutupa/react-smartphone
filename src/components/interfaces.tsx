@@ -9,7 +9,9 @@ export interface UpperSpeakProps {
   color?: string;
 }
 
-export interface ScreenProps {}
+export interface ScreenProps {
+  color?: string;
+}
 
 export interface HomeButtonProps {
   color?: string;

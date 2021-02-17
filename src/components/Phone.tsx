@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {
   ContainerProps,
   UpperSpeakProps,
-  // ScreenProps,
+  ScreenProps,
   HomeButtonProps,
   CameraProps,
   VolumeProps,
@@ -53,7 +53,8 @@ const UpperSpeaker = styled.div`
 `;
 
 const Screen = styled.div`
-  background-color: ${dark};
+  background-color: ${(props: ScreenProps) =>
+    props.color ? props.color : dark};
   width: ${phoneWidth - 60}px;
   height: ${phoneHeight - 110}px;
   position: absolute;
@@ -123,6 +124,7 @@ interface Props {
   text?: string;
   content?: JSX.Element;
   children?: JSX.Element | string;
+  screenColor?: string;
 }
 
 export default function Phone(props: Props) {
@@ -137,14 +139,13 @@ export default function Phone(props: Props) {
     text,
     children,
     content,
+    screenColor,
   } = props;
-  const component = children ? (
-    <div>{children}</div>
-  ) : content ? (
-    content
-  ) : (
-    renderDefault(text)
-  );
+  const component = children
+    ? children
+    : content
+    ? content
+    : renderDefault(text);
 
   return (
     <Container
@@ -156,7 +157,7 @@ export default function Phone(props: Props) {
       <UpperSpeaker color={detailsColor} />
       <Camera color={cameraColor} />
       <VolumeButtons color={volumeButtonsColor} />
-      <Screen>{component}</Screen>
+      <Screen color={screenColor}>{component}</Screen>
       <HomeButton color={detailsColor} />
     </Container>
   );

@@ -16,10 +16,10 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import styled from 'styled-components';
 import { phoneWidth, phoneHeight, phoneColor, phoneSecondaryColor, dark, cameraColor, } from './constants';
-var Container = styled.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  position: relative;\n  cursor: pointer;\n  height: ", ";\n  width: ", ";\n  background-color: ", ";\n  border-radius: 25px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  align-content: center;\n  justify-content: center;\n  text-align: center;\n  transition: all 0.2s linear;\n  box-shadow: 0 10px\n    ", ";\n"], ["\n  position: relative;\n  cursor: pointer;\n  height: ",
+var Container = styled.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  position: relative;\n  cursor: pointer;\n  height: ", ";\n  width: ", ";\n  background-color: ", ";\n  border-radius: 25px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  align-content: center;\n  justify-content: center;\n  transition: all 0.2s linear;\n  box-shadow: 0 10px\n    ", ";\n"], ["\n  position: relative;\n  cursor: pointer;\n  height: ",
     ";\n  width: ",
     ";\n  background-color: ",
-    ";\n  border-radius: 25px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  align-content: center;\n  justify-content: center;\n  text-align: center;\n  transition: all 0.2s linear;\n  box-shadow: 0 10px\n    ",
+    ";\n  border-radius: 25px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  align-content: center;\n  justify-content: center;\n  transition: all 0.2s linear;\n  box-shadow: 0 10px\n    ",
     ";\n"])), function (props) {
     return props.height ? props.height : phoneHeight + 'px';
 }, function (props) {
@@ -46,17 +46,15 @@ var VolumeButtons = styled.div(templateObject_6 || (templateObject_6 = __makeTem
     ";\n  height: ", "px;\n  width: 7px;\n  position: absolute;\n  left: -7px;\n  top: 100px;\n"])), function (props) {
     return props.color ? props.color : phoneSecondaryColor;
 }, phoneHeight / 7);
-var Title = styled.h3(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  color: white;\n  padding-top: 200px;\n  font-weight: 700;\n  height: 100%;\n  width: 100%;\n"], ["\n  color: white;\n  padding-top: 200px;\n  font-weight: 700;\n  height: 100%;\n  width: 100%;\n"])));
+var Title = styled.h3(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  color: white;\n  padding-top: 200px;\n  font-weight: 700;\n  height: 100%;\n  width: 100%;\n  text-align: center;\n"], ["\n  color: white;\n  padding-top: 200px;\n  font-weight: 700;\n  height: 100%;\n  width: 100%;\n  text-align: center;\n"])));
 var renderDefault = function (text) { return (_jsx(Title, { children: text || 'Thanks for using react-phone.' }, void 0)); };
 export default function Phone(props) {
-    var height = props.height, width = props.width, caseColor = props.caseColor, detailsColor = props.detailsColor, cameraColor = props.cameraColor, shadowColor = props.shadowColor, volumeButtonsColor = props.volumeButtonsColor, text = props.text;
-    var content = props.content
-        ? props.content
-        : renderDefault.bind(null, text);
+    var height = props.height, width = props.width, caseColor = props.caseColor, detailsColor = props.detailsColor, cameraColor = props.cameraColor, shadowColor = props.shadowColor, volumeButtonsColor = props.volumeButtonsColor, text = props.text, children = props.children, content = props.content;
+    var component = children ? (_jsx("div", { children: children }, void 0)) : content ? (content) : (renderDefault(text));
     return (_jsxs(Container, __assign({ height: height, width: width, shadowColor: shadowColor, color: caseColor }, { children: [_jsx(UpperSpeaker, { color: detailsColor }, void 0),
             _jsx(Camera, { color: cameraColor }, void 0),
             _jsx(VolumeButtons, { color: volumeButtonsColor }, void 0),
-            _jsx(Screen, { children: content() }, void 0),
+            _jsx(Screen, { children: component }, void 0),
             _jsx(HomeButton, { color: detailsColor }, void 0)] }), void 0));
 }
 var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7;

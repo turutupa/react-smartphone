@@ -5,7 +5,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Smartphone>How are you doing??</Smartphone>
+    <Smartphone />
   </React.StrictMode>,
   document.getElementById('root')
 );
