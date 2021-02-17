@@ -33,7 +33,10 @@ var UpperSpeaker = styled.div(templateObject_2 || (templateObject_2 = __makeTemp
     ";\n"])), function (props) {
     return props.color ? props.color : dark;
 });
-var Screen = styled.div(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  background-color: ", ";\n  width: ", "px;\n  height: ", "px;\n  position: absolute;\n  left: 30px;\n  top: 50px;\n  border-radius: 25px;\n"], ["\n  background-color: ", ";\n  width: ", "px;\n  height: ", "px;\n  position: absolute;\n  left: 30px;\n  top: 50px;\n  border-radius: 25px;\n"])), dark, phoneWidth - 60, phoneHeight - 110);
+var Screen = styled.div(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  background-color: ", ";\n  width: ", "px;\n  height: ", "px;\n  position: absolute;\n  left: 30px;\n  top: 50px;\n  border-radius: 25px;\n"], ["\n  background-color: ",
+    ";\n  width: ", "px;\n  height: ", "px;\n  position: absolute;\n  left: 30px;\n  top: 50px;\n  border-radius: 25px;\n"])), function (props) {
+    return props.color ? props.color : dark;
+}, phoneWidth - 60, phoneHeight - 110);
 var HomeButton = styled.div(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  border-radius: 25px;\n  background-color: ", ";\n  position: absolute;\n  width: 125px;\n  height: 30px;\n  left: 0;\n  right: 0;\n  bottom: 15px;\n  margin: 0 auto;\n"], ["\n  border-radius: 25px;\n  background-color: ",
     ";\n  position: absolute;\n  width: 125px;\n  height: 30px;\n  left: 0;\n  right: 0;\n  bottom: 15px;\n  margin: 0 auto;\n"])), function (props) {
     return props.color ? props.color : dark;
@@ -49,12 +52,16 @@ var VolumeButtons = styled.div(templateObject_6 || (templateObject_6 = __makeTem
 var Title = styled.h3(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  color: white;\n  padding-top: 200px;\n  font-weight: 700;\n  height: 100%;\n  width: 100%;\n  text-align: center;\n"], ["\n  color: white;\n  padding-top: 200px;\n  font-weight: 700;\n  height: 100%;\n  width: 100%;\n  text-align: center;\n"])));
 var renderDefault = function (text) { return (_jsx(Title, { children: text || 'Thanks for using react-phone.' }, void 0)); };
 export default function Phone(props) {
-    var height = props.height, width = props.width, caseColor = props.caseColor, detailsColor = props.detailsColor, cameraColor = props.cameraColor, shadowColor = props.shadowColor, volumeButtonsColor = props.volumeButtonsColor, text = props.text, children = props.children, content = props.content;
-    var component = children ? (_jsx("div", { children: children }, void 0)) : content ? (content) : (renderDefault(text));
+    var height = props.height, width = props.width, caseColor = props.caseColor, detailsColor = props.detailsColor, cameraColor = props.cameraColor, shadowColor = props.shadowColor, volumeButtonsColor = props.volumeButtonsColor, text = props.text, children = props.children, content = props.content, screenColor = props.screenColor;
+    var component = children
+        ? children
+        : content
+            ? content
+            : renderDefault(text);
     return (_jsxs(Container, __assign({ height: height, width: width, shadowColor: shadowColor, color: caseColor }, { children: [_jsx(UpperSpeaker, { color: detailsColor }, void 0),
             _jsx(Camera, { color: cameraColor }, void 0),
             _jsx(VolumeButtons, { color: volumeButtonsColor }, void 0),
-            _jsx(Screen, { children: component }, void 0),
+            _jsx(Screen, __assign({ color: screenColor }, { children: component }), void 0),
             _jsx(HomeButton, { color: detailsColor }, void 0)] }), void 0));
 }
 var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7;

@@ -9,6 +9,7 @@ interface Props {
     text?: string;
     content?: JSX.Element;
     children?: JSX.Element | string;
+    screenColor?: string;
 }
 export default function Phone(props: Props): JSX.Element;
 export {};

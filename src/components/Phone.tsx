@@ -7,6 +7,7 @@ import {
   HomeButtonProps,
   CameraProps,
   VolumeProps,
+  LockButtonProps,
 } from './interfaces';
 
 import {
@@ -17,6 +18,8 @@ import {
   dark,
   cameraColor,
 } from './constants';
+
+import Lockscreen from './Lockscreen';
 
 const Container = styled.div`
   position: relative;
@@ -55,8 +58,10 @@ const UpperSpeaker = styled.div`
 const Screen = styled.div`
   background-color: ${(props: ScreenProps) =>
     props.color ? props.color : dark};
-  width: ${phoneWidth - 60}px;
-  height: ${phoneHeight - 110}px;
+  height: ${(props: ContainerProps) =>
+    props.height ? `calc(${props.height} - 110px)` : phoneHeight - 110 + 'px'};
+  width: ${(props: ContainerProps) =>
+    props.width ? `calc(${props.width} - 60px)` : phoneWidth - 60 + 'px'};
   position: absolute;
   left: 30px;
   top: 50px;
@@ -64,16 +69,27 @@ const Screen = styled.div`
 `;
 
 const HomeButton = styled.div`
-  border-radius: 25px;
   background-color: ${(props: HomeButtonProps) =>
     props.color ? props.color : dark};
+  box-shadow: 0 3px
+    ${(props: HomeButtonProps) =>
+      props.shadowColor ? props.shadowColor : phoneSecondaryColor};
+  border-radius: 25px;
   position: absolute;
   width: 125px;
   height: 30px;
   left: 0;
   right: 0;
-  bottom: 15px;
+  bottom: 17px;
   margin: 0 auto;
+  transition: all 0.2s linear;
+
+  &:active {
+    box-shadow: 0 0px
+      ${(props: HomeButtonProps) =>
+        props.shadowColor ? props.shadowColor : phoneSecondaryColor};
+    transform: translateY(4px);
+  }
 `;
 
 const Camera = styled.div`
@@ -84,20 +100,43 @@ const Camera = styled.div`
   height: 20px;
   position: absolute;
   top: 15px;
-  left: 0;
-  right: 0;
-  margin-right: auto;
-  margin-left: ${phoneWidth - 100}px;
+  right: 10%;
 `;
 
 const VolumeButtons = styled.div`
   background-color: ${(props: VolumeProps) =>
     props.color ? props.color : phoneSecondaryColor};
-  height: ${phoneHeight / 7}px;
+  height: ${phoneHeight / 6}px;
   width: 7px;
   position: absolute;
   left: -7px;
   top: 100px;
+  transition: all 0.2s linear;
+
+  &:active {
+    width: 3px;
+    transform: translateX(4px);
+  }
+`;
+
+const LockButton = styled.div`
+  background-color: ${(props: VolumeProps) =>
+    props.color ? props.color : phoneSecondaryColor};
+  height: ${phoneHeight / 10}px;
+  width: 7px;
+  position: absolute;
+  right: -7px;
+  top: 100px;
+  transition: all 0.2s linear;
+
+  &:active {
+    width: 3px;
+    transform: translateX(-4px);
+  }
+`;
+
+const Content = styled.div`
+  z-index: -1;
 `;
 
 const Title = styled.h3`
@@ -114,8 +153,8 @@ const renderDefault = (text?: string) => (
 );
 
 interface Props {
-  height?: number;
-  width?: number;
+  height?: string | number;
+  width?: string | number;
   caseColor?: string;
   detailsColor?: string;
   cameraColor?: string;
@@ -147,6 +186,8 @@ export default function Phone(props: Props) {
     ? content
     : renderDefault(text);
 
+  const [lockscreen, toggleLockScreen] = React.useState<boolean>(false);
+
   return (
     <Container
       height={height}
@@ -155,10 +196,15 @@ export default function Phone(props: Props) {
       color={caseColor}
     >
       <UpperSpeaker color={detailsColor} />
-      <Camera color={cameraColor} />
+      <Camera color={cameraColor} width={width} />
       <VolumeButtons color={volumeButtonsColor} />
-      <Screen color={screenColor}>{component}</Screen>
-      <HomeButton color={detailsColor} />
+      <LockButton onClick={() => toggleLockScreen(!lockscreen)} />
+
+      <Screen color={screenColor} height={height} width={width}>
+        <Lockscreen status={lockscreen} />
+        <Content>{component}</Content>
+      </Screen>
+      <HomeButton color={detailsColor} shadowColor={detailsColor} />
     </Container>
   );
 }

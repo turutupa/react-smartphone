@@ -5,7 +5,12 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Smartphone />
+    <Smartphone height='880px' width='550px'>
+      <div style={{ textAlign: 'center', paddingTop: '30px', color: 'white' }}>
+        <h1>I love this app!</h1>
+        <p>Looks freakin amazing!</p>
+      </div>
+    </Smartphone>
   </React.StrictMode>,
   document.getElementById('root')
 );
