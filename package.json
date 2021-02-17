@@ -34,7 +34,7 @@
     "prepublish": "tsc",
     "deploy": "node scripts/updateTsconfig.js && npm publish --access-public",
     "git": "git add . && git commit -m",
-    "postgit": "git push --all"
+    "postgit": "git push --all && npm version patch"
   },
   "eslintConfig": {
     "extends": [
