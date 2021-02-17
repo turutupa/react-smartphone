@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "noEmit": false,
+    "baseUrl": "src",
+    "paths": {
+      "src/*": ["*"]
+    },
+    "jsx": "react",
+    "declaration": true,
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "typeRoots": ["node_modules/@types"],
+    "experimentalDecorators": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
