@@ -138,9 +138,9 @@ const LockButton = styled.div`
 
 const Content = styled.div`
   height: ${(props: ContentProps) =>
-    props.height ? `calc(${props.height} - 110px)` : phoneHeight + 'px'};
+    props.height ? `calc(${props.height} - 110px)` : phoneHeight - 110 + 'px'};
   width: ${(props: ContentProps) =>
-    props.width ? `calc(${props.width} - 60px)` : phoneWidth + 'px'};
+    props.width ? `calc(${props.width} - 60px)` : phoneWidth - 60 + 'px'};
   border-radius: 25px;
   z-index: -1;
 `;

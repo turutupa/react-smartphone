@@ -25,3 +25,9 @@ export interface LockButtonProps {
     color?: string;
     onClick: () => void;
 }
+export interface ContentProps {
+    height: string | number;
+    width: string | number;
+    children: JSX.Element;
+    [key: string]: any;
+}

@@ -23,9 +23,15 @@ var LockscreenOverlay = styled.div(templateObject_1 || (templateObject_1 = __mak
 var Clock = styled.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-content: center;\n  align-items: center;\n  justify-content: center;\n"], ["\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-content: center;\n  align-items: center;\n  justify-content: center;\n"])));
 function getTime() {
     var d = new Date();
-    var hours = d.getHours();
-    var minutes = d.getMinutes();
+    var hours = String(d.getHours());
+    var minutes = String(d.getMinutes());
     var seconds = String(d.getSeconds());
+    if (hours.length < 2) {
+        hours = '0' + hours;
+    }
+    if (minutes.length < 2) {
+        minutes = '0' + minutes;
+    }
     if (seconds.length < 2) {
         seconds = '0' + seconds;
     }

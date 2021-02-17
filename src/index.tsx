@@ -5,7 +5,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Smartphone height='880px' width='550px'>
+    <Smartphone>
       <div
         style={{
           textAlign: 'center',

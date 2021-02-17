@@ -14,7 +14,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Smartphone from './components';
 import reportWebVitals from './reportWebVitals';
-ReactDOM.render(_jsx(React.StrictMode, { children: _jsx(Smartphone, __assign({ height: '880px', width: '550px' }, { children: _jsxs("div", __assign({ style: { textAlign: 'center', paddingTop: '30px', color: 'white' } }, { children: [_jsx("h1", { children: "I love this app!" }, void 0),
+ReactDOM.render(_jsx(React.StrictMode, { children: _jsx(Smartphone, __assign({ height: '880px', width: '550px' }, { children: _jsxs("div", __assign({ style: {
+                textAlign: 'center',
+                color: 'white',
+                backgroundColor: 'salmon',
+            } }, { children: [_jsx("h1", { children: "I love this app!" }, void 0),
                 _jsx("p", { children: "Looks freakin amazing!" }, void 0)] }), void 0) }), void 0) }, void 0), document.getElementById('root'));
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
