@@ -90,7 +90,7 @@ export default function Phone(props) {
             _jsx(LockButton, { onClick: function () { return toggleLockScreen(!lockscreen); } }, void 0),
             _jsxs(Screen, __assign({ color: screenColor, height: height, width: width }, { children: [_jsx(Lockscreen, { status: lockscreen }, void 0),
                     _jsx(Content, __assign({ height: height, width: width }, { children: component }), void 0)] }), void 0),
-            _jsx(HomeButton, { color: detailsColor, shadowColor: detailsColor }, void 0)] }), void 0));
+            _jsx(HomeButton, { color: detailsColor, shadowColor: shadowColor }, void 0)] }), void 0));
 }
 var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9;
 //# sourceMappingURL=Phone.js.map

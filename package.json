@@ -1,6 +1,6 @@
 {
   "name": "react-smartphone",
-  "version": "0.1.19",
+  "version": "0.1.9",
   "private": false,
   "repository": {
     "type": "git",
@@ -36,9 +36,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prepublish": "tsc",
-    "publish": "node scripts/updateTsconfig.js && npm publish --access-public",
+    "publish": "node scripts/updateTsconfig.js && npm version patch && npm publish --access-public",
     "git": "git add . && git commit -m",
-    "postgit": "git push && npm version patch",
+    "postgit": "git push --all",
     "gitpages": "git subtree push --prefix build origin gh-pages",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build -b 'gh-pages'"

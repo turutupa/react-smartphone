@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/react-smartphone/static/js/main.e07cbe99.chunk.js",
-    "main.js.map": "/react-smartphone/static/js/main.e07cbe99.chunk.js.map",
+    "main.js": "/react-smartphone/static/js/main.c39242bf.chunk.js",
+    "main.js.map": "/react-smartphone/static/js/main.c39242bf.chunk.js.map",
     "runtime-main.js": "/react-smartphone/static/js/runtime-main.c9ab6322.js",
     "runtime-main.js.map": "/react-smartphone/static/js/runtime-main.c9ab6322.js.map",
     "static/js/2.a78c3225.chunk.js": "/react-smartphone/static/js/2.a78c3225.chunk.js",
@@ -15,6 +15,6 @@
   "entrypoints": [
     "static/js/runtime-main.c9ab6322.js",
     "static/js/2.a78c3225.chunk.js",
-    "static/js/main.e07cbe99.chunk.js"
+    "static/js/main.c39242bf.chunk.js"
   ]
 }
