@@ -38,7 +38,7 @@
     "prepublish": "tsc",
     "publish": "node scripts/updateTsconfig.js && npm publish --access-public",
     "git": "git add . && git commit -m",
-    "postgit": "git push origin/main && npm version patch",
+    "postgit": "git push origin main && npm version patch",
     "gitpages": "git subtree push --prefix build origin gh-pages",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build -b 'gh-pages'"
