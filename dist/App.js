@@ -21,9 +21,10 @@ import ParamsSelection from './components/ParamsSelection';
 import Slider from './components/Slider';
 import { phoneWidth, phoneHeight, phoneColor, phoneSecondaryColor, dark, cameraColor as camColor, reactDefaultBackground, } from './components/constants';
 var Container = styled.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  margin: 0;\n  padding: 0;\n  padding-bottom: 100px;\n  display: flex;\n  flex-direction: column;\n"], ["\n  margin: 0;\n  padding: 0;\n  padding-bottom: 100px;\n  display: flex;\n  flex-direction: column;\n"])));
-var Body = styled.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  margin-left: 80px;\n  padding: 50px 0;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  max-width: 600px;\n  flex-wrap: wrap;\n"], ["\n  margin-left: 80px;\n  padding: 50px 0;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  max-width: 600px;\n  flex-wrap: wrap;\n"])));
-var Code = styled.code(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  font-size: 16px;\n  padding: 30px 30px;\n  border-radius: 25px;\n  background-color: #f3f3f3;\n  width: 100%;\n"], ["\n  font-size: 16px;\n  padding: 30px 30px;\n  border-radius: 25px;\n  background-color: #f3f3f3;\n  width: 100%;\n"])));
-var CodeBlock = styled.p(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  margin-top: 0;\n  margin-bottom: 0;\n"], ["\n  margin-top: 0;\n  margin-bottom: 0;\n"])));
+var Body = styled.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 0 10px;\n  text-align: center;\n\n  @media (min-width: 1200px) {\n    margin-left: 80px;\n    padding: 50px 0;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    max-width: 800px;\n    flex-wrap: wrap;\n    overflowx: auto;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 0 10px;\n  text-align: center;\n\n  @media (min-width: 1200px) {\n    margin-left: 80px;\n    padding: 50px 0;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    max-width: 800px;\n    flex-wrap: wrap;\n    overflowx: auto;\n  }\n"])));
+var ResultWrapper = styled.div(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  padding: 10px;\n"], ["\n  display: flex;\n  flex-direction: column;\n  padding: 10px;\n"])));
+var Code = styled.code(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  padding: 10px 10px;\n  font-size: 14px;\n  border-radius: 15px;\n  background-color: #f3f3f3;\n  width: 100%;\n  text-align: left;\n\n  @media (min-width: 768px) {\n    font-size: 16px;\n    padding: 30px 30px;\n  }\n"], ["\n  padding: 10px 10px;\n  font-size: 14px;\n  border-radius: 15px;\n  background-color: #f3f3f3;\n  width: 100%;\n  text-align: left;\n\n  @media (min-width: 768px) {\n    font-size: 16px;\n    padding: 30px 30px;\n  }\n"])));
+var CodeBlock = styled.p(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  margin-top: 0;\n  margin-bottom: 0;\n"], ["\n  margin-top: 0;\n  margin-bottom: 0;\n"])));
 function App() {
     var _a = React.useState(phoneColor), caseColor = _a[0], setCaseColor = _a[1];
     var _b = React.useState(reactDefaultBackground), screenColor = _b[0], setScreenColor = _b[1];
@@ -53,14 +54,14 @@ function App() {
                     _jsx(ParamsSelection, { label: 'Details color', onChange: setDetailsColor }, void 0),
                     _jsx(ParamsSelection, { label: 'Camera color', onChange: setCameraColor }, void 0),
                     _jsx(ParamsSelection, { label: 'Volume Buttons color', onChange: setVolumeButtonsColor }, void 0),
-                    _jsx("h3", __assign({ style: { paddingTop: '30px' } }, { children: "Result" }), void 0),
-                    _jsxs(Code, { children: [_jsx(CodeBlock, { children: "\n        <Smartphone" }, void 0),
-                            _jsx("span", { children: ("\n          height='" + (height + 'px') + "' // regular height values px/%/vh/vw...\n          width='" + (width + 'px') + "' // regular width values px/%/vh/vw...\n          caseColor='" + screenColor + "' // hex or rgb\n          detailsColor='" + detailsColor + "' // hex or rgb\n          cameraColor='" + cameraColor + "' // hex or rgb\n          shadowColor='" + shadowColor + "' // hex or rgb\n          volumeButtonsColor='" + volumeButtonsColor + "' // hex or rgb\n          screenColor='" + screenColor + "' // hex or rgb\n        >")
-                                    .split('\n')
-                                    .map(function (row) { return (_jsx(CodeBlock, __assign({ style: { marginLeft: '25px' } }, { children: row }), row)); }) }, void 0),
-                            _jsx("p", __assign({ style: { margin: '15px 25px', fontWeight: 'bolder' } }, { children: "// Your component goes here!" }), void 0),
-                            _jsx(CodeBlock, { children: "\n        </Smartphone>\n        " }, void 0)] }, void 0)] }, void 0)] }, void 0));
+                    _jsxs(ResultWrapper, { children: [_jsx("h3", __assign({ style: { textAlign: 'left', paddingTop: '30px' } }, { children: "Result" }), void 0),
+                            _jsxs(Code, { children: [_jsx(CodeBlock, { children: "\n        <Smartphone" }, void 0),
+                                    _jsx("span", { children: ("\n          height='" + (height + 'px') + "' // regular height values px/%/vh/vw...\n          width='" + (width + 'px') + "' // regular width values px/%/vh/vw...\n          caseColor='" + screenColor + "' // hex or rgb\n          detailsColor='" + detailsColor + "' // hex or rgb\n          cameraColor='" + cameraColor + "' // hex or rgb\n          shadowColor='" + shadowColor + "' // hex or rgb\n          volumeButtonsColor='" + volumeButtonsColor + "' // hex or rgb\n          screenColor='" + screenColor + "' // hex or rgb\n          >")
+                                            .split('\n')
+                                            .map(function (row) { return (_jsx(CodeBlock, __assign({ style: { marginLeft: '25px' } }, { children: row }), row)); }) }, void 0),
+                                    _jsx("p", __assign({ style: { margin: '15px 25px', fontWeight: 'bolder' } }, { children: "// Your component goes here!" }), void 0),
+                                    _jsx(CodeBlock, { children: "\n        </Smartphone>\n        " }, void 0)] }, void 0)] }, void 0)] }, void 0)] }, void 0));
 }
 export default App;
-var templateObject_1, templateObject_2, templateObject_3, templateObject_4;
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5;
 //# sourceMappingURL=App.js.map
