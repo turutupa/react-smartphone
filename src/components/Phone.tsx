@@ -46,7 +46,7 @@ const UpperSpeaker = styled.div`
   width: 200px;
   height: 15px;
   position: absolute;
-  top: 20px;
+  top: 15px;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -59,12 +59,13 @@ const Screen = styled.div`
   background-color: ${(props: ScreenProps) =>
     props.color ? props.color : dark};
   height: ${(props: ContainerProps) =>
-    props.height ? `calc(${props.height} - 110px)` : phoneHeight - 110 + 'px'};
+    props.height ? `calc(${props.height} - 95px)` : phoneHeight - 110 + 'px'};
   width: ${(props: ContainerProps) =>
-    props.width ? `calc(${props.width} - 60px)` : phoneWidth - 60 + 'px'};
-  position: absolute;
-  left: 30px;
-  top: 50px;
+    props.width
+      ? `min(calc(${props.width} - 30px), calc(100% - 30px))`
+      : phoneWidth - 60 + 'px'};
+  margin-top: -20px;
+  position: relative;
   border-radius: 25px;
   overflow: hidden;
 `;
@@ -100,7 +101,7 @@ const Camera = styled.div`
   width: 20px;
   height: 20px;
   position: absolute;
-  top: 15px;
+  top: 10px;
   right: 10%;
 `;
 
@@ -139,10 +140,8 @@ const LockButton = styled.div`
 `;
 
 const Content = styled.div`
-  height: ${(props: ContentProps) =>
-    props.height ? `calc(${props.height} - 110px)` : phoneHeight - 110 + 'px'};
-  width: ${(props: ContentProps) =>
-    props.width ? `calc(${props.width} - 60px)` : phoneWidth - 60 + 'px'};
+  height: 100%;
+  width: 100%;
   border-radius: 25px;
   z-index: -1;
 `;
@@ -210,9 +209,7 @@ export default function Phone(props: Props) {
 
       <Screen color={screenColor} height={height} width={width}>
         <Lockscreen status={lockscreen} />
-        <Content height={height} width={width}>
-          {component}
-        </Content>
+        <Content>{component}</Content>
       </Screen>
       <HomeButton color={detailsColor} shadowColor={shadowColor} />
     </Container>

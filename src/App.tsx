@@ -22,21 +22,42 @@ const Container = styled.div`
 `;
 
 const Body = styled.div`
-  margin-left: 80px;
-  padding: 50px 0;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  max-width: 600px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+  text-align: center;
+
+  @media (min-width: 1200px) {
+    margin-left: 80px;
+    padding: 50px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 800px;
+    flex-wrap: wrap;
+    overflowx: auto;
+  }
+`;
+
+const ResultWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 `;
 
 const Code = styled.code`
-  font-size: 16px;
-  padding: 30px 30px;
-  border-radius: 25px;
+  padding: 10px 10px;
+  font-size: 14px;
+  border-radius: 15px;
   background-color: #f3f3f3;
   width: 100%;
+  text-align: left;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+    padding: 30px 30px;
+  }
 `;
 
 const CodeBlock = styled.p`
@@ -116,12 +137,13 @@ function App() {
           onChange={setVolumeButtonsColor}
         />
 
-        <h3 style={{ paddingTop: '30px' }}>Result</h3>
-        <Code>
-          <CodeBlock>{`
+        <ResultWrapper>
+          <h3 style={{ textAlign: 'left', paddingTop: '30px' }}>Result</h3>
+          <Code>
+            <CodeBlock>{`
         <Smartphone`}</CodeBlock>
-          <span>
-            {`
+            <span>
+              {`
           height='${height + 'px'}' // regular height values px/%/vh/vw...
           width='${width + 'px'}' // regular width values px/%/vh/vw...
           caseColor='${screenColor}' // hex or rgb
@@ -130,23 +152,24 @@ function App() {
           shadowColor='${shadowColor}' // hex or rgb
           volumeButtonsColor='${volumeButtonsColor}' // hex or rgb
           screenColor='${screenColor}' // hex or rgb
-        >`
-              .split('\n')
-              .map((row) => (
-                <CodeBlock key={row} style={{ marginLeft: '25px' }}>
-                  {row}
-                </CodeBlock>
-              ))}
-          </span>
-          <p style={{ margin: '15px 25px', fontWeight: 'bolder' }}>
-            // Your component goes here!
-          </p>
-          <CodeBlock>
-            {`
+          >`
+                .split('\n')
+                .map((row) => (
+                  <CodeBlock key={row} style={{ marginLeft: '25px' }}>
+                    {row}
+                  </CodeBlock>
+                ))}
+            </span>
+            <p style={{ margin: '15px 25px', fontWeight: 'bolder' }}>
+              // Your component goes here!
+            </p>
+            <CodeBlock>
+              {`
         </Smartphone>
         `}
-          </CodeBlock>
-        </Code>
+            </CodeBlock>
+          </Code>
+        </ResultWrapper>
       </Body>
     </Container>
   );

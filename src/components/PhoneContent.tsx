@@ -7,6 +7,7 @@ const reactLinkColor = '#61dafb';
 
 const Container = styled.div`
   height: 100%;
+  width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
   display: flex;

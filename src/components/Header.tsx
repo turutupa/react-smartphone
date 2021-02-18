@@ -10,10 +10,16 @@ const Container = styled.div`
 `;
 
 const PhoneWrapper = styled.div`
-  position: fixed;
-  top: 150px;
-  left: 850px;
-  padding-bottom: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 40px 20px;
+
+  @media (min-width: 1200px) {
+    position: fixed;
+    top: 5vh;
+    left: 850px;
+  }
 `;
 
 interface PhoneParams {
