@@ -53,9 +53,7 @@ function App() {
   const [shadowColor, setShadowsColor] = React.useState<string>(
     phoneSecondaryColor
   );
-  const [detailsColor, setDetailsColor] = React.useState<string>(
-    phoneSecondaryColor
-  );
+  const [detailsColor, setDetailsColor] = React.useState<string>(dark);
   const [cameraColor, setCameraColor] = React.useState<string>(camColor);
   const [volumeButtonsColor, setVolumeButtonsColor] = React.useState<string>(
     phoneSecondaryColor
