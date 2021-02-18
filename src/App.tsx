@@ -2,7 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import Header from './components/Header';
 import ParamsSelection from './components/ParamsSelection';
+import Slider from './components/Slider';
 import {
+  phoneWidth,
+  phoneHeight,
   phoneColor,
   phoneSecondaryColor,
   dark,
@@ -29,11 +32,11 @@ const Body = styled.div`
 `;
 
 const Code = styled.code`
-  font-size: 15px;
-  padding: 40px 50px;
+  font-size: 16px;
+  padding: 30px 30px;
   border-radius: 25px;
   background-color: #f3f3f3;
-  width: 650px;
+  width: 100%;
 `;
 
 const CodeBlock = styled.p`
@@ -58,6 +61,8 @@ function App() {
   const [volumeButtonsColor, setVolumeButtonsColor] = React.useState<string>(
     phoneSecondaryColor
   );
+  const [width, setWidth] = React.useState<number>(phoneWidth);
+  const [height, setHeight] = React.useState<number>(phoneHeight);
 
   const phoneParams: PhoneParams = {
     caseColor,
@@ -66,6 +71,8 @@ function App() {
     shadowColor,
     cameraColor,
     volumeButtonsColor,
+    width: width + 'px',
+    height: height + 'px',
   };
 
   return (
@@ -84,6 +91,21 @@ function App() {
             for his awesome react-color color picker!
           </em>
         </p>
+
+        <Slider
+          label='Phone width'
+          value={width}
+          min={300}
+          max={800}
+          onChange={setWidth}
+        />
+        <Slider
+          label='Phone height'
+          value={height}
+          min={500}
+          max={1000}
+          onChange={setHeight}
+        />
         <ParamsSelection label={'Phone case color'} onChange={setCaseColor} />
         <ParamsSelection label={'Screen color'} onChange={setScreenColor} />
         <ParamsSelection label={'Shadows colors'} onChange={setShadowsColor} />
@@ -100,12 +122,14 @@ function App() {
         <Smartphone`}</CodeBlock>
           <span>
             {`
-          caseColor='${screenColor}'
-          detailsColor='${detailsColor}'
-          cameraColor='${cameraColor}'
-          shadowColor='${shadowColor}'
-          volumeButtonsColor='${volumeButtonsColor}'
-          screenColor='${screenColor}'
+          height='${height + 'px'}' // regular height values px/%/vh/vw...
+          width='${width + 'px'}' // regular width values px/%/vh/vw...
+          caseColor='${screenColor}' // hex or rgb
+          detailsColor='${detailsColor}' // hex or rgb
+          cameraColor='${cameraColor}' // hex or rgb
+          shadowColor='${shadowColor}' // hex or rgb
+          volumeButtonsColor='${volumeButtonsColor}' // hex or rgb
+          screenColor='${screenColor}' // hex or rgb
         >`
               .split('\n')
               .map((row) => (

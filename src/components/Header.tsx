@@ -13,6 +13,7 @@ const PhoneWrapper = styled.div`
   position: fixed;
   top: 150px;
   left: 850px;
+  padding-bottom: 100px;
 `;
 
 interface PhoneParams {
