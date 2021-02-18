@@ -36,12 +36,12 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prepublishOnly": "npm version patch && tsc && node scripts/updateTsconfig.js",
-    "publish": "npm publish --access-public",
+    "deploy": "npm publish --access-public",
     "git": "git add . && git commit -m",
     "postgit": "git push --all",
     "gitpages": "git subtree push --prefix build origin gh-pages",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -b 'gh-pages'"
+    "gh-pages": "gh-pages -d build -b 'gh-pages'"
   },
   "eslintConfig": {
     "extends": [
