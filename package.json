@@ -1,6 +1,6 @@
 {
   "name": "react-smartphone",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "private": false,
   "repository": {
     "type": "git",
@@ -39,7 +39,8 @@
     "publish": "node scripts/updateTsconfig.js && npm publish --access-public",
     "git": "git add . && git commit -m",
     "postgit": "git push --all && npm version patch",
-    "gitpages": "git subtree push --prefix dist origin gh-pages","predeploy": "npm run build",
+    "gitpages": "git subtree push --prefix dist origin gh-pages",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build -b 'gh-pages'"
   },
   "eslintConfig": {
