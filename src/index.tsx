@@ -2,21 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Smartphone from './components';
 import reportWebVitals from './reportWebVitals';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Smartphone>
-      <div
-        style={{
-          textAlign: 'center',
-          color: 'white',
-          backgroundColor: 'salmon',
-        }}
-      >
-        <h1>I love this app!</h1>
-        <p>Looks freakin amazing!</p>
-      </div>
-    </Smartphone>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

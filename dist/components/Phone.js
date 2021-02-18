@@ -59,20 +59,20 @@ var Camera = styled.div(templateObject_5 || (templateObject_5 = __makeTemplateOb
     ";\n  width: 20px;\n  height: 20px;\n  position: absolute;\n  top: 15px;\n  right: 10%;\n"])), function (props) {
     return props.color ? props.color : cameraColor;
 });
-var VolumeButtons = styled.div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  background-color: ", ";\n  height: ", "px;\n  width: 7px;\n  position: absolute;\n  left: -7px;\n  top: 100px;\n  transition: all 0.2s linear;\n\n  &:active {\n    width: 3px;\n    transform: translateX(4px);\n  }\n"], ["\n  background-color: ",
-    ";\n  height: ", "px;\n  width: 7px;\n  position: absolute;\n  left: -7px;\n  top: 100px;\n  transition: all 0.2s linear;\n\n  &:active {\n    width: 3px;\n    transform: translateX(4px);\n  }\n"])), function (props) {
+var VolumeButtons = styled.div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  background-color: ", ";\n  height: ", "px;\n  width: 7px;\n  position: absolute;\n  left: -7px;\n  top: 100px;\n  border-radius: 2px;\n  transition: all 0.2s linear;\n\n  &:active {\n    width: 3px;\n    transform: translateX(4px);\n  }\n"], ["\n  background-color: ",
+    ";\n  height: ", "px;\n  width: 7px;\n  position: absolute;\n  left: -7px;\n  top: 100px;\n  border-radius: 2px;\n  transition: all 0.2s linear;\n\n  &:active {\n    width: 3px;\n    transform: translateX(4px);\n  }\n"])), function (props) {
     return props.color ? props.color : phoneSecondaryColor;
 }, phoneHeight / 6);
-var LockButton = styled.div(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  background-color: ", ";\n  height: ", "px;\n  width: 7px;\n  position: absolute;\n  right: -7px;\n  top: 100px;\n  transition: all 0.2s linear;\n\n  &:active {\n    width: 3px;\n    transform: translateX(-4px);\n  }\n"], ["\n  background-color: ",
-    ";\n  height: ", "px;\n  width: 7px;\n  position: absolute;\n  right: -7px;\n  top: 100px;\n  transition: all 0.2s linear;\n\n  &:active {\n    width: 3px;\n    transform: translateX(-4px);\n  }\n"])), function (props) {
+var LockButton = styled.div(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  background-color: ", ";\n  height: ", "px;\n  width: 7px;\n  position: absolute;\n  right: -7px;\n  top: 100px;\n  border-radius: 2px;\n  transition: all 0.2s linear;\n\n  &:active {\n    width: 3px;\n    transform: translateX(-4px);\n  }\n"], ["\n  background-color: ",
+    ";\n  height: ", "px;\n  width: 7px;\n  position: absolute;\n  right: -7px;\n  top: 100px;\n  border-radius: 2px;\n  transition: all 0.2s linear;\n\n  &:active {\n    width: 3px;\n    transform: translateX(-4px);\n  }\n"])), function (props) {
     return props.color ? props.color : phoneSecondaryColor;
 }, phoneHeight / 10);
 var Content = styled.div(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  height: ", ";\n  width: ", ";\n  border-radius: 25px;\n  z-index: -1;\n"], ["\n  height: ",
     ";\n  width: ",
     ";\n  border-radius: 25px;\n  z-index: -1;\n"])), function (props) {
-    return props.height ? "calc(" + props.height + " - 110px)" : phoneHeight + 'px';
+    return props.height ? "calc(" + props.height + " - 110px)" : phoneHeight - 110 + 'px';
 }, function (props) {
-    return props.width ? "calc(" + props.width + " - 60px)" : phoneWidth + 'px';
+    return props.width ? "calc(" + props.width + " - 60px)" : phoneWidth - 60 + 'px';
 });
 var Title = styled.h3(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  color: white;\n  padding-top: 200px;\n  font-weight: 700;\n  height: 100%;\n  width: 100%;\n  text-align: center;\n"], ["\n  color: white;\n  padding-top: 200px;\n  font-weight: 700;\n  height: 100%;\n  width: 100%;\n  text-align: center;\n"])));
 var renderDefault = function (text) { return (_jsx(Title, { children: text || 'Thanks for using react-phone.' }, void 0)); };

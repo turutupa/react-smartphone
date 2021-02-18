@@ -112,6 +112,7 @@ const VolumeButtons = styled.div`
   position: absolute;
   left: -7px;
   top: 100px;
+  border-radius: 2px;
   transition: all 0.2s linear;
 
   &:active {
@@ -128,6 +129,7 @@ const LockButton = styled.div`
   position: absolute;
   right: -7px;
   top: 100px;
+  border-radius: 2px;
   transition: all 0.2s linear;
 
   &:active {
@@ -212,7 +214,7 @@ export default function Phone(props: Props) {
           {component}
         </Content>
       </Screen>
-      <HomeButton color={detailsColor} shadowColor={detailsColor} />
+      <HomeButton color={detailsColor} shadowColor={shadowColor} />
     </Container>
   );
 }
