@@ -83,7 +83,7 @@ function App() {
             >
               casesandberg
             </a>{' '}
-            for his awesome reac-color color picker!
+            for his awesome react-color color picker!
           </em>
         </p>
         <ParamsSelection label={'Phone case color'} onChange={setCaseColor} />
