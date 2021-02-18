@@ -21,7 +21,21 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
-const Body = styled.div`
+const Paragraph = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 80px;
+  max-width: 650px;
+  margin-bottom: 40px;
+  margin-top: 0;
+
+  @media (min-width: 1200px) {
+    margin-left: 80px;
+    flex-wrap: wrap;
+  }
+`;
+
+const PhoneParamsSelection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,9 +48,8 @@ const Body = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    max-width: 800px;
+    max-width: 700px;
     flex-wrap: wrap;
-    overflowx: auto;
   }
 `;
 
@@ -99,20 +112,43 @@ function App() {
   return (
     <Container>
       <Header phoneParams={phoneParams} />
-      <Body>
-        <p>
-          <em style={{ fontWeight: 600 }}>
-            **Kudos to{' '}
-            <a
-              href='http://casesandberg.github.io/react-color/#api-onChange'
-              target='_blank'
-            >
-              casesandberg
-            </a>{' '}
-            for his awesome react-color color picker!
-          </em>
+      <p style={{ marginLeft: '80px', margin: '30px 0 0 80px' }}>
+        <em style={{ fontWeight: 600 }}>
+          **Kudos to{' '}
+          <a
+            href='http://casesandberg.github.io/react-color/#api-onChange'
+            target='_blank'
+          >
+            casesandberg
+          </a>{' '}
+          for his awesome react-color color picker!
+        </em>
+      </p>
+      <Paragraph>
+        <h2 style={{ textAlign: 'left' }}>About</h2>
+        <p style={{ fontWeight: 600 }}>
+          Simple and funny smartphone container! Use as a regular div, you can
+          set height and width and insert any and as many react components
+          inside as you wish!
         </p>
-
+      </Paragraph>
+      <Paragraph>
+        <h2 style={{ textAlign: 'left' }}>Install</h2>
+        <p style={{ fontWeight: 600 }}>To install simply run</p>
+        <Code>npm i smart-phone</Code>
+        <p style={{ fontWeight: 600 }}>
+          How-to use it? Import Smartphone component as usual and place your
+          React Components inside it as you would in a regular div (see example
+          down below).
+        </p>
+        <Code>import Smartphone from 'react-smarphone'</Code>
+        <p style={{ fontWeight: 600 }}>
+          <strong>ALL</strong> props are optional. If you don't provide anything
+          it will rende with default options (as rendered on this page).
+        </p>
+      </Paragraph>
+      <h2 style={{ textAlign: 'left', marginLeft: '80px' }}>Customize!</h2>
+      <PhoneParamsSelection>
         <Slider
           label='Phone width'
           value={width}
@@ -138,7 +174,7 @@ function App() {
         />
 
         <ResultWrapper>
-          <h3 style={{ textAlign: 'left', paddingTop: '30px' }}>Result</h3>
+          <h2 style={{ textAlign: 'left', paddingTop: '30px' }}>Result</h2>
           <Code>
             <CodeBlock>{`
         <Smartphone`}</CodeBlock>
@@ -170,7 +206,7 @@ function App() {
             </CodeBlock>
           </Code>
         </ResultWrapper>
-      </Body>
+      </PhoneParamsSelection>
     </Container>
   );
 }
