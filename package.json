@@ -35,7 +35,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "tsc && npm version patch && node scripts/updateTsconfig.js",
+    "prepare": "node scripts/updateTsconfig.js && tsc && npm version patch",
     "deploy": "npm publish --access-public",
     "git": "git add . && git commit -m",
     "postgit": "git push --all",
