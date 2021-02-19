@@ -1,5 +1,7 @@
 {
   "name": "react-smartphone",
+  "author": "Alberto Delgado",
+  "email": "adc.batros@gmail.com",
   "version": "0.1.49",
   "private": false,
   "repository": {
@@ -61,5 +63,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "keywords": ["container", "smartphone", "phone", "react", "react container", "react frame", "frame", "mobile"]
 }
