@@ -19,13 +19,15 @@ const Container = styled.div`
   padding-bottom: 100px;
   display: flex;
   flex-direction: column;
+  max-width: 100vw !important;
+  overflow: hidden;
 `;
 
 const Paragraph = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 80px;
-  max-width: 650px;
+  max-width: min(650px, 100%);
   margin-bottom: 40px;
   margin-top: 0;
 
@@ -127,9 +129,13 @@ function App() {
       <Paragraph>
         <h2 style={{ textAlign: 'left' }}>About</h2>
         <p style={{ fontWeight: 600 }}>
-          Simple and funny smartphone container! Use as a regular div, you can
-          set height and width and insert any and as many react components
-          inside as you wish!
+          Simple and funny smartphone container! Acts as a regular div but with
+          a smartphone frame. You can set height and width and insert any and as
+          many react components inside as you wish!
+        </p>
+        <p style={{ fontWeight: 600 }}>
+          Home button and volume button functionalities are WIP but in the
+          meantime use the power button to toggle lockscreen!
         </p>
       </Paragraph>
       <Paragraph>
@@ -144,7 +150,7 @@ function App() {
         <Code>import Smartphone from 'react-smartphone'</Code>
         <p style={{ fontWeight: 600 }}>
           <strong>ALL</strong> props are optional. If you don't provide anything
-          it will rende with default options (as rendered on this page).
+          it will render with default options (as rendered on this page).
         </p>
       </Paragraph>
       <h2 style={{ textAlign: 'left', marginLeft: '80px' }}>Customize!</h2>
@@ -177,7 +183,7 @@ function App() {
           <h2 style={{ textAlign: 'left', paddingTop: '30px' }}>Result</h2>
           <Code>
             <CodeBlock>{`
-        <Smartphone`}</CodeBlock>
+        <SmartphoneContainer`}</CodeBlock>
             <span>
               {`
           height='${height + 'px'}' // regular height values px/%/vh/vw...
@@ -201,7 +207,7 @@ function App() {
             </p>
             <CodeBlock>
               {`
-        </Smartphone>
+        </SmartphoneContainer>
         `}
             </CodeBlock>
           </Code>
