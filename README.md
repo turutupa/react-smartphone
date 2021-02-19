@@ -2,9 +2,9 @@
 
 ![Demo](https://github.com/Turutupa/react-smartphone/blob/main/demo.gif)
 
-If you just want to see the results please jump to the [DEMO](https://turutupa.github.io/react-smartphone/)! 
+If you just want to see the showcase please jump to the [DEMO](https://turutupa.github.io/react-smartphone/)! 
 
-Sections
+## Sections
 - About
 - Install
 - Examples
