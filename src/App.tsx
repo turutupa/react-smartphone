@@ -147,7 +147,7 @@ function App() {
           React Components inside it as you would in a regular div (see example
           down below).
         </p>
-        <Code>import Smartphone from 'react-smartphone'</Code>
+        <Code>import SmartphoneContainer from 'react-smartphone'</Code>
         <p style={{ fontWeight: 600 }}>
           <strong>ALL</strong> props are optional. If you don't provide anything
           it will render with default options (as rendered on this page).
