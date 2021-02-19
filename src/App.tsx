@@ -133,10 +133,14 @@ function App() {
           a smartphone frame. You can set height and width and insert any and as
           many react components inside as you wish!
         </p>
-        <p style={{ fontWeight: 600 }}>
-          Home button and volume button functionalities are WIP but in the
-          meantime use the power button to toggle lockscreen!
-        </p>
+        <strong>Features:</strong>
+        <ul style={{ fontWeight: 600 }}>
+          <li>Adjustable colors </li>
+          <li> Adjust width && height</li>
+          <li>Scroll vertically like in a real smartphone </li>
+          <li>Bind Volume && Home buttons to trigger your custom callback </li>
+          <li>Toggle the phone lock button to activate lockscreen</li>
+        </ul>
       </Paragraph>
       <Paragraph>
         <h2 style={{ textAlign: 'left' }}>Install</h2>
