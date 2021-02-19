@@ -46,7 +46,7 @@ const UpperSpeaker = styled.div`
   width: 200px;
   height: 15px;
   position: absolute;
-  top: 15px;
+  top: 12px;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -84,7 +84,7 @@ const HomeButton = styled.div`
   right: 0;
   bottom: 17px;
   margin: 0 auto;
-  transition: all 0.2s linear;
+  transition: all 0.1s linear;
 
   &:active {
     box-shadow: 0 0px
@@ -101,7 +101,7 @@ const Camera = styled.div`
   width: 20px;
   height: 20px;
   position: absolute;
-  top: 10px;
+  top: 9px;
   right: 10%;
 `;
 
@@ -114,7 +114,7 @@ const VolumeButtons = styled.div`
   left: -7px;
   top: 100px;
   border-radius: 2px;
-  transition: all 0.2s linear;
+  transition: all 0.1s linear;
 
   &:active {
     width: 3px;
@@ -131,7 +131,7 @@ const LockButton = styled.div`
   right: -7px;
   top: 100px;
   border-radius: 2px;
-  transition: all 0.2s linear;
+  transition: all 0.1s linear;
 
   &:active {
     width: 3px;
@@ -141,9 +141,9 @@ const LockButton = styled.div`
 
 const Content = styled.div`
   height: 100%;
-  width: 100%;
-  border-radius: 25px;
-  z-index: -1;
+  margin-right: -65px;
+  padding-right: 50px;
+  overflow-y: scroll;
 `;
 
 const Title = styled.h3`
@@ -171,6 +171,8 @@ interface Props {
   content?: JSX.Element;
   children?: JSX.Element | string;
   screenColor?: string;
+  homeButtonEvent?: () => void;
+  volumeButtonEvent?: () => void;
 }
 
 export default function Phone(props: Props) {
@@ -186,6 +188,8 @@ export default function Phone(props: Props) {
     children,
     content,
     screenColor,
+    homeButtonEvent,
+    volumeButtonEvent,
   } = props;
   const component = children
     ? children
@@ -204,14 +208,18 @@ export default function Phone(props: Props) {
     >
       <UpperSpeaker color={detailsColor} />
       <Camera color={cameraColor} width={width} />
-      <VolumeButtons color={volumeButtonsColor} />
+      <VolumeButtons onClick={volumeButtonEvent} color={volumeButtonsColor} />
       <LockButton onClick={() => toggleLockScreen(!lockscreen)} />
 
       <Screen color={screenColor} height={height} width={width}>
         <Lockscreen status={lockscreen} />
         <Content>{component}</Content>
       </Screen>
-      <HomeButton color={detailsColor} shadowColor={shadowColor} />
+      <HomeButton
+        onClick={homeButtonEvent}
+        color={detailsColor}
+        shadowColor={shadowColor}
+      />
     </Container>
   );
 }

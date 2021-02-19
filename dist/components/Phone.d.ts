@@ -10,6 +10,8 @@ interface Props {
     content?: JSX.Element;
     children?: JSX.Element | string;
     screenColor?: string;
+    homeButtonEvent?: () => void;
+    volumeButtonEvent?: () => void;
 }
 export default function Phone(props: Props): JSX.Element;
 export {};

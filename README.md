@@ -15,7 +15,12 @@ Smartphone container, acts as a regular container with relative positioning, wit
 
 Simply add to the container your React components and they will be rendered in the screen!
 
-Bonus! Toggle the phone lock button to activate lockscreen ;)
+**Features**
+- Adjustable colors
+- Adjust width && height
+- Scroll vertically like in a real smartphone
+- Bind Volume && Home buttons to trigger your custom callback
+- Toggle the phone lock button to activate lockscreen
 
 Please add feedback if there is anything you might find missing.
 
@@ -99,8 +104,9 @@ If you want to customiz the phone you can specify props like color and dimension
 | screenColor  | 374D5C  | string | 
 | children  | none  | React Component |
 | content   | none  | React Component: if the are children, it will prioritize rendering children instead of content prop |
-
-
+| volumeButtonEvent | none | callback function ()=> {}|
+| homeButtonEvent | none | callback function ()=>{} |
+    
 Thanks and please do not forget to submit feedback if you something doesn't work properly or you simply want more fun features :)
 
 <a href="https://www.buymeacoffee.com/turutupa" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-green.png" alt="Buy Me A Beer" height="41" width="174" style="border-radius: 10px;"></a>
