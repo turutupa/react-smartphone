@@ -31,13 +31,14 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "tsc-build":"node scripts/updateTsconfig.js && tsc",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && npm run tsc-build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "node scripts/updateTsconfig.js && tsc && npm version patch",
+    "prepare": "npm run build && npm version patch",
     "deploy": "npm publish --access-public",
-    "git": "node scripts/updateTsconfig.js && tsc && npm run build && git add . && git commit -m",
+    "git": "npm run build && git add . && git commit -m",
     "postgit": "git push --all",
     "gitpages": "git subtree push --prefix build origin gh-pages",
     "predeploy": "npm run build",
