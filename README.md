@@ -23,11 +23,15 @@ Please add feedback if there is anything you might find missing.
 
 Run 
 
-```npm i react-smartphone```
+```
+npm i react-smartphone
+```
 
 and import as usual
 
-```import SmartphoneContainer from 'react-smartphone'```
+```
+import SmartphoneContainer from 'react-smartphone'
+```
 
 ## Examples
 
