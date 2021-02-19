@@ -141,7 +141,7 @@ function App() {
       <Paragraph>
         <h2 style={{ textAlign: 'left' }}>Install</h2>
         <p style={{ fontWeight: 600 }}>To install simply run</p>
-        <Code>npm i smart-phone</Code>
+        <Code>npm i react-smartphone</Code>
         <p style={{ fontWeight: 600 }}>
           How-to use it? Import Smartphone component as usual and place your
           React Components inside it as you would in a regular div (see example

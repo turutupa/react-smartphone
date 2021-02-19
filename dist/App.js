@@ -52,7 +52,7 @@ function App() {
                     _jsx("p", __assign({ style: { fontWeight: 600 } }, { children: "Home button and volume button functionalities are WIP but in the meantime use the power button to toggle lockscreen!" }), void 0)] }, void 0),
             _jsxs(Paragraph, { children: [_jsx("h2", __assign({ style: { textAlign: 'left' } }, { children: "Install" }), void 0),
                     _jsx("p", __assign({ style: { fontWeight: 600 } }, { children: "To install simply run" }), void 0),
-                    _jsx(Code, { children: "npm i smart-phone" }, void 0),
+                    _jsx(Code, { children: "npm i react-smartphone" }, void 0),
                     _jsx("p", __assign({ style: { fontWeight: 600 } }, { children: "How-to use it? Import Smartphone component as usual and place your React Components inside it as you would in a regular div (see example down below)." }), void 0),
                     _jsx(Code, { children: "import Smartphone from 'react-smartphone'" }, void 0),
                     _jsxs("p", __assign({ style: { fontWeight: 600 } }, { children: [_jsx("strong", { children: "ALL" }, void 0), " props are optional. If you don't provide anything it will render with default options (as rendered on this page)."] }), void 0)] }, void 0),
