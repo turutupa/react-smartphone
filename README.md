@@ -102,3 +102,5 @@ If you want to customiz the phone you can specify props like color and dimension
 
 
 Thanks and please do not forget to submit feedback if you something doesn't work properly or you simply want more fun features :)
+
+<a href="https://www.buymeacoffee.com/turutupa" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-green.png" alt="Buy Me A Beer" height="41" width="174" style="border-radius: 10px;"></a>
