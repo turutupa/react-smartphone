@@ -1,6 +1,6 @@
 {
   "name": "react-smartphone",
-  "version": "0.1.45",
+  "version": "0.1.46",
   "private": false,
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "tsc-build":"node scripts/updateTsconfig.js && tsc",
+    "tsc-build": "node scripts/updateTsconfig.js && tsc",
     "start": "react-scripts start",
     "build": "react-scripts build && npm run tsc-build",
     "test": "react-scripts test",
