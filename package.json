@@ -2,7 +2,7 @@
   "name": "react-smartphone",
   "author": "Alberto Delgado",
   "email": "adc.batros@gmail.com",
-  "version": "0.1.51",
+  "version": "0.1.50",
   "private": false,
   "repository": {
     "type": "git",
@@ -35,8 +35,7 @@
     "build": "npm run tsc-build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build-patch": "npm run build && npm version patch",
-    "deploy": "npm run build-patch && npm publish --access-public",
+    "deploy": "npm version patch && npm publish --access-public",
     "git": "npm run build && git add . && git commit -m",
     "postgit": "git push --all",
     "gitpages": "git subtree push --prefix build origin gh-pages",
