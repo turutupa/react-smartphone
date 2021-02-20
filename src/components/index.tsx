@@ -1,2 +1,2 @@
-import Smartphone from './Phone';
+import Smartphone from './Smartphone';
 export default Smartphone;

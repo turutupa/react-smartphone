@@ -1,0 +1,67 @@
+{
+  "name": "react-smartphone-example",
+  "author": "Alberto Delgado",
+  "email": "adc.batros@gmail.com",
+  "version": "0.1.50",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Turutupa/react-smartphone"
+  },
+  "license": "MIT",
+  "homepage": "https://turutupa.github.io/react-smartphone",
+  "dependencies": {
+    "@testing-library/jest-dom": "../node_modules/@testing-library/jest-dom",
+    "@testing-library/react": "../node_modules/@testing-library/react",
+    "@testing-library/user-event": "../node_modules/@testing-library/user-event",
+    "@types/jest": "../node_modules/@types/jest",
+    "@types/node": "../node_modules/@types/node",
+    "@types/react": "../node_modules/@types/react",
+    "@types/react-color": "^3.0.4",
+    "@types/react-dom": "../node_modules/@types/react-dom",
+    "@types/styled-components": "../node_modules/styled-components",
+    "gh-pages": "../node_modules/gh-pages",
+    "react": "../node_modules/react",
+    "react-color": "^2.19.3",
+    "react-dom": "../node_modules/react-dom",
+    "react-scripts": "../node_modules/react-scripts",
+    "react-smartphone": "file:..",
+    "styled-components": "../node_modules/styled-components",
+    "typescript": "../node_modules/typescript",
+    "web-vitals": "../node_modules/web-vitals"
+  },
+  "scripts": {
+    "start": "node ../node_modules/react-scripts/bin/react-scripts.js start ./",
+    "build": "rm -rf ../build && node ../node_modules/react-scripts/bin/react-scripts.js build ./ && mv build ../build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "keywords": [
+    "container",
+    "smartphone",
+    "phone",
+    "react",
+    "react container",
+    "react frame",
+    "frame",
+    "mobile"
+  ]
+}
