@@ -7,7 +7,7 @@ import HomeButton from './HomeButton';
 import Camera from './Camera';
 import VolumeButtons from './VolumeButtons';
 import LockButton from './LockButton';
-import Content from './PhoneContent';
+import PhoneContent from './PhoneContent';
 import Lockscreen from './Lockscreen';
 
 const Title = styled.h3`
@@ -77,7 +77,7 @@ export default function Phone(props: Props) {
 
       <Screen color={screenColor} height={height} width={width}>
         <Lockscreen status={lockscreen} />
-        <Content>{component}</Content>
+        <PhoneContent>{component}</PhoneContent>
       </Screen>
       <HomeButton
         onClick={homeButtonEvent}
