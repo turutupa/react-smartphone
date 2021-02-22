@@ -29,6 +29,7 @@ const Clock = styled.div`
   align-content: center;
   align-items: center;
   justify-content: center;
+  font-size: calc(15px + 50%);
 `;
 
 function getTime(): string {
@@ -53,6 +54,7 @@ interface Props {
 }
 
 export default function Lockscreen(props: Props) {
+  const [timer, setTimer] = React.useState<any>();
   const [time, setTime] = React.useState<string>(getTime());
   const [status, setStatus] = React.useState<boolean>(false);
 
@@ -61,9 +63,15 @@ export default function Lockscreen(props: Props) {
   }, [props.status]);
 
   React.useEffect(() => {
-    setTimeout(() => {
-      setTime(getTime());
-    }, 1000);
+    setTimer(
+      setTimeout(() => {
+        setTime(getTime());
+      })
+    );
+
+    return () => {
+      clearTimeout(timer);
+    };
   }, [time]);
 
   return (

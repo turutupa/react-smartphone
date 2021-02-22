@@ -20,7 +20,7 @@ var LockscreenOverlay = styled.div(templateObject_1 || (templateObject_1 = __mak
     ";\n"])), function (props) {
     return props.status ? "visible" : "hidden";
 });
-var Clock = styled.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-content: center;\n  align-items: center;\n  justify-content: center;\n"], ["\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-content: center;\n  align-items: center;\n  justify-content: center;\n"])));
+var Clock = styled.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-content: center;\n  align-items: center;\n  justify-content: center;\n  font-size: calc(15px + 50%);\n"], ["\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-content: center;\n  align-items: center;\n  justify-content: center;\n  font-size: calc(15px + 50%);\n"])));
 function getTime() {
     var d = new Date();
     var hours = String(d.getHours());
@@ -38,15 +38,19 @@ function getTime() {
     return hours + ":" + minutes + ":" + seconds;
 }
 export default function Lockscreen(props) {
-    var _a = React.useState(getTime()), time = _a[0], setTime = _a[1];
-    var _b = React.useState(false), status = _b[0], setStatus = _b[1];
+    var _a = React.useState(), timer = _a[0], setTimer = _a[1];
+    var _b = React.useState(getTime()), time = _b[0], setTime = _b[1];
+    var _c = React.useState(false), status = _c[0], setStatus = _c[1];
     React.useEffect(function () {
         setStatus(props.status);
     }, [props.status]);
     React.useEffect(function () {
-        setTimeout(function () {
+        setTimer(setTimeout(function () {
             setTime(getTime());
-        }, 1000);
+        }));
+        return function () {
+            clearTimeout(timer);
+        };
     }, [time]);
     return (_jsx(LockscreenOverlay, __assign({ status: status }, { children: _jsx(Clock, { children: time }, void 0) }), void 0));
 }
