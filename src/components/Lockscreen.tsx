@@ -56,11 +56,6 @@ interface Props {
 
 export default function Lockscreen(props: Props) {
   const [time, setTime] = React.useState<string>(getTime());
-  const [status, setStatus] = React.useState<boolean>(false);
-
-  React.useEffect(() => {
-    setStatus(props.status);
-  }, [props.status]);
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -73,7 +68,7 @@ export default function Lockscreen(props: Props) {
   }, [time]);
 
   return (
-    <LockscreenOverlay status={status}>
+    <LockscreenOverlay status={props.status}>
       <Clock>{time}</Clock>
     </LockscreenOverlay>
   );

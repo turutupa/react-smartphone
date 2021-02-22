@@ -39,10 +39,6 @@ function getTime() {
 }
 export default function Lockscreen(props) {
     var _a = React.useState(getTime()), time = _a[0], setTime = _a[1];
-    var _b = React.useState(false), status = _b[0], setStatus = _b[1];
-    React.useEffect(function () {
-        setStatus(props.status);
-    }, [props.status]);
     React.useEffect(function () {
         var timer = setInterval(function () {
             setTime(getTime());
@@ -51,7 +47,7 @@ export default function Lockscreen(props) {
             clearTimeout(timer);
         };
     }, [time]);
-    return (_jsx(LockscreenOverlay, __assign({ status: status }, { children: _jsx(Clock, { children: time }, void 0) }), void 0));
+    return (_jsx(LockscreenOverlay, __assign({ status: props.status }, { children: _jsx(Clock, { children: time }, void 0) }), void 0));
 }
 var templateObject_1, templateObject_2;
 //# sourceMappingURL=Lockscreen.js.map
