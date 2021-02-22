@@ -43,11 +43,12 @@ export default function Lockscreen(props) {
     var _c = React.useState(false), status = _c[0], setStatus = _c[1];
     React.useEffect(function () {
         setStatus(props.status);
+        return function () { return clearTimeout(timer); };
     }, [props.status]);
     React.useEffect(function () {
         setTimer(setTimeout(function () {
             setTime(getTime());
-        }));
+        }, 1000));
         return function () {
             clearTimeout(timer);
         };
