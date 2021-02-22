@@ -1,3 +1,4 @@
+import { nextTick } from 'node:process';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -54,22 +55,17 @@ interface Props {
 }
 
 export default function Lockscreen(props: Props) {
-  const [timer, setTimer] = React.useState<any>();
   const [time, setTime] = React.useState<string>(getTime());
   const [status, setStatus] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     setStatus(props.status);
-
-    return () => clearTimeout(timer);
   }, [props.status]);
 
   React.useEffect(() => {
-    setTimer(
-      setTimeout(() => {
-        setTime(getTime());
-      }, 1000)
-    );
+    const timer = setInterval(() => {
+      setTime(getTime());
+    }, 1000);
 
     return () => {
       clearTimeout(timer);

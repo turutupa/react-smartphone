@@ -38,17 +38,15 @@ function getTime() {
     return hours + ":" + minutes + ":" + seconds;
 }
 export default function Lockscreen(props) {
-    var _a = React.useState(), timer = _a[0], setTimer = _a[1];
-    var _b = React.useState(getTime()), time = _b[0], setTime = _b[1];
-    var _c = React.useState(false), status = _c[0], setStatus = _c[1];
+    var _a = React.useState(getTime()), time = _a[0], setTime = _a[1];
+    var _b = React.useState(false), status = _b[0], setStatus = _b[1];
     React.useEffect(function () {
         setStatus(props.status);
-        return function () { return clearTimeout(timer); };
     }, [props.status]);
     React.useEffect(function () {
-        setTimer(setTimeout(function () {
+        var timer = setInterval(function () {
             setTime(getTime());
-        }, 1000));
+        }, 1000);
         return function () {
             clearTimeout(timer);
         };
