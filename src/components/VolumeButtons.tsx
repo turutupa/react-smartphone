@@ -5,7 +5,7 @@ export interface VolumeProps {
   color?: string;
 }
 
-export default styled.div`
+const Button = styled.div`
   background-color: ${(props: VolumeProps) =>
     props.color ? props.color : phoneSecondaryColor};
   height: ${phoneHeight / 6}px;
@@ -17,7 +17,15 @@ export default styled.div`
   transition: all 0.1s linear;
 
   &:active {
-    width: 3px;
-    transform: translateX(4px);
+    width: 5px;
+    transform: translateX(2px);
   }
 `;
+interface Props {
+  color?: string;
+  callback?: () => void;
+}
+
+export default function VolumeButtons(props: Props) {
+  return <Button color={props.color} onClick={props.callback} />;
+}

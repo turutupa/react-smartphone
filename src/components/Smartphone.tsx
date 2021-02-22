@@ -35,8 +35,8 @@ interface Props {
   content?: JSX.Element;
   children?: JSX.Element | string;
   screenColor?: string;
-  homeButtonEvent?: () => void;
-  volumeButtonEvent?: () => void;
+  onHomeButtonPress?: () => void;
+  onVolumeButtonPress?: () => void;
 }
 
 export default function Phone(props: Props) {
@@ -52,8 +52,8 @@ export default function Phone(props: Props) {
     children,
     content,
     screenColor,
-    homeButtonEvent,
-    volumeButtonEvent,
+    onHomeButtonPress,
+    onVolumeButtonPress,
   } = props;
   const component = children
     ? children
@@ -72,7 +72,10 @@ export default function Phone(props: Props) {
     >
       <UpperSpeaker color={detailsColor} />
       <Camera color={cameraColor} width={width} />
-      <VolumeButtons onClick={volumeButtonEvent} color={volumeButtonsColor} />
+      <VolumeButtons
+        callback={onVolumeButtonPress}
+        color={volumeButtonsColor}
+      />
       <LockButton onClick={() => toggleLockScreen(!lockscreen)} />
 
       <Screen color={screenColor} height={height} width={width}>
@@ -80,7 +83,7 @@ export default function Phone(props: Props) {
         <PhoneContent>{component}</PhoneContent>
       </Screen>
       <HomeButton
-        onClick={homeButtonEvent}
+        onClick={onHomeButtonPress}
         color={detailsColor}
         shadowColor={shadowColor}
       />

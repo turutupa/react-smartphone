@@ -104,8 +104,8 @@ If you want to customiz the phone you can specify props like color and dimension
 | screenColor  | 374D5C  | string | 
 | children  | none  | React Component |
 | content   | none  | React Component: if the are children, it will prioritize rendering children instead of content prop |
-| volumeButtonEvent | none | callback function ()=> {}|
-| homeButtonEvent | none | callback function ()=>{} |
+| onVolumeButtonPress | none | callback function ()=> {}|
+| onHomeButtonPress | none | callback function ()=>{} |
     
 Thanks and please do not forget to submit feedback if you something doesn't work properly or you simply want more fun features :)
 

@@ -18,7 +18,7 @@ export default styled.div`
   transition: all 0.1s linear;
 
   &:active {
-    width: 3px;
-    transform: translateX(-4px);
+    width: 5px;
+    transform: translateX(-2px);
   }
 `;

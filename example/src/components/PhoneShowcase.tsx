@@ -59,8 +59,8 @@ export default function Component(props: Props) {
     <PhoneWrapper>
       <Smartphone
         {...props.phoneParams}
-        volumeButtonEvent={volumeButtonPress}
-        homeButtonEvent={homeButtonPress}
+        onVolumeButtonPress={volumeButtonPress}
+        onHomeButtonPress={homeButtonPress}
       >
         <PhoneContent />
       </Smartphone>
