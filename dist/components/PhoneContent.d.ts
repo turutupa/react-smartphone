@@ -3,3 +3,4 @@ interface Props {
 }
 export default function PhoneContent(props: Props): JSX.Element;
 export {};
+//# sourceMappingURL=PhoneContent.d.ts.map

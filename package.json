@@ -30,7 +30,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "tsc-build": "node scripts/updateTsconfig.js && tsc",
+    "tsc-build": "node scripts/updateTsconfig.js && tsc --declaration",
     "start": "react-scripts start",
     "build": "npm run tsc-build",
     "test": "react-scripts test",

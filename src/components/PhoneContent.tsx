@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-// interface Props {
-//   width:
-// }
-
 const Container = styled.div`
   height: 100%;
   margin-right: -65px;

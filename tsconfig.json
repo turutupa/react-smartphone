@@ -26,7 +26,11 @@
     "noImplicitThis": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "noEmit": false
+    "noEmit": false,
+    "declaration": true,
+    "declarationMap": true
   },
-  "noEmit": false
+  "include": [
+    "src/**/*"
+  ]
 }
