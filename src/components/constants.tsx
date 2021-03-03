@@ -8,3 +8,4 @@ export const cameraColor = '#f4745d';
 export const yellow = 'rgb(245, 223, 77)';
 export const gray = '#202124';
 export const reactDefaultBackground = '#282c34';
+export const borderRadius = '25px';

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { dark } from './constants';
+import { borderRadius, dark } from './constants';
 
 export interface UpperSpeakProps {
   color?: string;
@@ -13,7 +13,7 @@ export default styled.div`
   left: 0;
   right: 0;
   margin: 0 auto;
-  border-radius: 25px;
+  border-radius: ${borderRadius};
   background-color: ${(props: UpperSpeakProps) =>
     props.color ? props.color : dark};
 `;

@@ -1,4 +1,15 @@
+import React from 'react';
 import styled from 'styled-components';
+
+interface Props {
+  children: JSX.Element | string;
+}
+
+const PhoneContent: React.FC<Props> = (props: Props) => {
+  return <Container>{props.children}</Container>;
+};
+
+export default PhoneContent;
 
 const Container = styled.div`
   height: 100%;
@@ -11,11 +22,3 @@ const Container = styled.div`
     padding-right: 0;
   }
 `;
-
-interface Props {
-  children: JSX.Element | string;
-}
-
-export default function PhoneContent(props: Props) {
-  return <Container>{props.children}</Container>;
-}

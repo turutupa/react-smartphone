@@ -1,11 +1,31 @@
+import React from 'react';
 import styled from 'styled-components';
-import { dark, phoneWidth, phoneHeight } from './constants';
+import { dark, phoneWidth, phoneHeight, borderRadius } from './constants';
 
 export interface ScreenProps {
   color?: string;
   height?: string;
   width?: string;
 }
+
+interface Props {
+  color?: string;
+  height?: string;
+  width?: string;
+  children: JSX.Element[];
+}
+
+const Screen: React.FC<Props> = (props: Props) => {
+  const { color, height, width } = props;
+
+  return (
+    <Container color={color} height={height} width={width}>
+      {props.children}
+    </Container>
+  );
+};
+
+export default Screen;
 
 const Container = styled.div`
   background-color: ${(props: ScreenProps) =>
@@ -18,23 +38,6 @@ const Container = styled.div`
       : phoneWidth - 60 + 'px'};
   margin-top: -20px;
   position: relative;
-  border-radius: 25px;
+  border-radius: ${borderRadius};
   overflow: hidden;
 `;
-
-interface Props {
-  color?: string;
-  height?: string;
-  width?: string;
-  children: JSX.Element[];
-}
-
-export default function (props: Props) {
-  const { color, height, width } = props;
-
-  return (
-    <Container color={color} height={height} width={width}>
-      {props.children}
-    </Container>
-  );
-}

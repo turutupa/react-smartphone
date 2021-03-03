@@ -1,3 +1,4 @@
+import React from 'react';
 import { Code, CodeBlock } from '../style/Code';
 
 interface Props {
@@ -11,7 +12,7 @@ interface Props {
   volumeButtonsColor: string;
 }
 
-export default function Component(props: Props) {
+const CodeResult: React.FC<Props> = (props: Props) => {
   const {
     height,
     width,
@@ -55,4 +56,6 @@ export default function Component(props: Props) {
       </CodeBlock>
     </Code>
   );
-}
+};
+
+export default CodeResult;

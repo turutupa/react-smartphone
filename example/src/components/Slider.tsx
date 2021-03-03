@@ -1,15 +1,5 @@
 import styled from 'styled-components';
-import { Dispatch, SetStateAction } from 'react';
-
-const Container = styled.div`
-  width: 50%;
-`;
-
-const Input = styled.input`
-  width: 240px;
-`;
-
-const Label = styled.h3``;
+import React, { Dispatch, SetStateAction } from 'react';
 
 interface Props {
   label: string;
@@ -19,7 +9,7 @@ interface Props {
   onChange: Dispatch<SetStateAction<number>>;
 }
 
-export default function Slider(props: Props) {
+const Slider: React.FC<Props> = (props: Props) => {
   return (
     <Container>
       <Label>{props.label}</Label>
@@ -33,4 +23,16 @@ export default function Slider(props: Props) {
       />
     </Container>
   );
-}
+};
+
+export default Slider;
+
+const Container = styled.div`
+  width: 50%;
+`;
+
+const Input = styled.input`
+  width: 240px;
+`;
+
+const Label = styled.h3``;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { dark, phoneSecondaryColor } from './constants';
+import { dark, phoneSecondaryColor, borderRadius } from './constants';
 
 export interface HomeButtonProps {
   color?: string;
@@ -12,7 +12,7 @@ export default styled.div`
   box-shadow: 0 3px
     ${(props: HomeButtonProps) =>
       props.shadowColor ? props.shadowColor : phoneSecondaryColor};
-  border-radius: 25px;
+  border-radius: ${borderRadius};
   position: absolute;
   width: 125px;
   height: 30px;

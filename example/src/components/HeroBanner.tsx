@@ -1,6 +1,28 @@
 import styled from 'styled-components';
 import { gray, yellow } from './constants';
 
+export default function Component() {
+  return (
+    <Container>
+      <H1>react-smartphone</H1>
+      <Description>
+        Wrap your content in a stylish yet simple Smartphone!
+      </Description>
+      <p>
+        <Badge
+          href='https://github.com/turutupa/react-smartphone'
+          target='_blank'
+        >
+          Github
+        </Badge>
+        <Badge href='https://www.buymeacoffee.com/turutupa' target='_blank'>
+          Buy me a Beer
+        </Badge>
+      </p>
+    </Container>
+  );
+}
+
 const Container = styled.div`
   background-color: ${gray};
   height: 400px;
@@ -41,25 +63,3 @@ const Badge = styled.a`
     filter: brightness(1.2);
   }
 `;
-
-export default function Component() {
-  return (
-    <Container>
-      <H1>react-smartphone</H1>
-      <Description>
-        Wrap your content in a stylish yet simple Smartphone!
-      </Description>
-      <p>
-        <Badge
-          href='https://github.com/turutupa/react-smartphone'
-          target='_blank'
-        >
-          Github
-        </Badge>
-        <Badge href='https://www.buymeacoffee.com/turutupa' target='_blank'>
-          Buy me a Beer
-        </Badge>
-      </p>
-    </Container>
-  );
-}

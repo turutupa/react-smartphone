@@ -1,31 +1,7 @@
+import React from 'react';
 import styled from 'styled-components';
 import ParamsSelection from './ParamsSelection';
 import Slider from './Slider';
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-left: -50px;
-
-  @media (min-width: 500px) {
-    margin-left: 0;
-    flex-direction: row;
-    width: 100vw;
-    flex-wrap: wrap;
-  }
-
-  @media (min-width: 1200px) {
-    margin-left: 80px;
-    padding: 50px 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    max-width: 700px;
-    flex-wrap: wrap;
-  }
-`;
 
 interface Props {
   width: number;
@@ -40,7 +16,7 @@ interface Props {
   setVolumeButtonsColor: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export default function Component(props: Props) {
+const PhoneParamsSelection: React.FC<Props> = (props: Props) => {
   const {
     width,
     height,
@@ -81,4 +57,31 @@ export default function Component(props: Props) {
       />
     </Container>
   );
-}
+};
+
+export default PhoneParamsSelection;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-left: -50px;
+
+  @media (min-width: 500px) {
+    margin-left: 0;
+    flex-direction: row;
+    width: 100vw;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: 1200px) {
+    margin-left: 80px;
+    padding: 50px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 700px;
+    flex-wrap: wrap;
+  }
+`;

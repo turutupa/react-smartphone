@@ -2,21 +2,6 @@ import styled from 'styled-components';
 import { Code } from '../style/Code';
 import { Paragraph } from '../style/Container';
 
-const Container = styled.div`
-  margin-top: 50px;
-`;
-
-const P = styled.p`
-  font-weight: 600;
-`;
-
-const Heading = styled.h2`
-  text-align: left;
-`;
-const Ul = styled.ul`
-  font-weight: 600;
-`;
-
 export default function About() {
   return (
     <Container>
@@ -54,3 +39,18 @@ export default function About() {
     </Container>
   );
 }
+
+const Container = styled.div`
+  margin-top: 50px;
+`;
+
+const P = styled.p`
+  font-weight: 600;
+`;
+
+const Heading = styled.h2`
+  text-align: left;
+`;
+const Ul = styled.ul`
+  font-weight: 600;
+`;

@@ -10,19 +10,6 @@ import LockButton from './LockButton';
 import PhoneContent from './PhoneContent';
 import Lockscreen from './Lockscreen';
 
-const Title = styled.h3`
-  color: white;
-  padding-top: 20vmin;
-  font-weight: 700;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-`;
-
-const renderDefault = (text?: string) => (
-  <Title>{text || 'Thanks for using react-phone.'}</Title>
-);
-
 interface Props {
   height?: string;
   width?: string;
@@ -39,7 +26,7 @@ interface Props {
   onVolumeButtonPress?: () => void;
 }
 
-export default function Phone(props: Props) {
+const Phone: React.FC<Props> = (props: Props) => {
   const {
     height,
     width,
@@ -77,7 +64,6 @@ export default function Phone(props: Props) {
         color={volumeButtonsColor}
       />
       <LockButton onClick={() => toggleLockScreen(!lockscreen)} />
-
       <Screen color={screenColor} height={height} width={width}>
         <Lockscreen status={lockscreen} />
         <PhoneContent>{component}</PhoneContent>
@@ -89,4 +75,19 @@ export default function Phone(props: Props) {
       />
     </Case>
   );
-}
+};
+
+export default Phone;
+
+const renderDefault = (text?: string) => (
+  <Title>{text || 'Thanks for using react-phone.'}</Title>
+);
+
+const Title = styled.h3`
+  color: white;
+  padding-top: 20vmin;
+  font-weight: 700;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+`;

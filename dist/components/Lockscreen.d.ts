@@ -1,6 +1,7 @@
+import React from 'react';
 interface Props {
     status: boolean;
 }
-export default function Lockscreen(props: Props): JSX.Element;
-export {};
+declare const Lockscreen: React.FC<Props>;
+export default Lockscreen;
 //# sourceMappingURL=Lockscreen.d.ts.map

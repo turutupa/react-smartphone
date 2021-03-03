@@ -4,6 +4,7 @@ import {
   phoneWidth,
   phoneColor,
   phoneSecondaryColor,
+  borderRadius,
 } from './constants';
 
 interface ContainerProps {
@@ -22,7 +23,7 @@ export default styled.div`
     props.width ? props.width : phoneWidth + 'px'};
   background-color: ${(props: ContainerProps) =>
     props.color ? props.color : phoneColor};
-  border-radius: 25px;
+  border-radius: ${borderRadius};
   display: flex;
   flex-direction: column;
   align-items: center;
